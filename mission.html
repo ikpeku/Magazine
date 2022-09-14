@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Manrope:wght@700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            font-family: "DM Sans" !important;
+        }
+
+        .fonts-fam {
+            font-family: 'Patrick Hand' !important;
+        }
+    </style>
+    <style type="text/tailwindcss">
+
+        @layer base {
+            html {
+                font-family: "DM Sans" !important;
+                
+            }
+
+        }
+
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+          .box-shadow {
+            box-shadow: 0px 4px 20px 6px rgba(252, 0, 0, 0.16);
+          }
+          .background-main {
+            background: rgb(61,4,4);
+            background: linear-gradient(162deg, rgba(61,4,4,1) 0%, rgba(3,7,30,1) 18%, rgba(16,9,23,1) 65%, rgba(60,14,2,0.969625350140056) 71%, rgba(16,9,24,1) 81%, rgba(16,9,24,1) 91%, rgba(3,7,30,1) 100%);
+          }
+
+          .footer {
+            background: #12131C;
+            box-shadow: -3px -3px 9px 3px rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+          }
+        }
+      </style>
+</head>
+
+<body class="">
+
+    <main class="background-main bg-no-repeat h-full" x-data="{ show: false }">
+
+        <div class="relative overflow-hidden bg-white md:bg-[#01001B] md:box-shadow">
+            <div class="mx-auto max-w-7xl md:bg-[#01001B]">
+
+                <div class="md:bg-[#01001B]">
+                    <div class="relative md:bg-[#01001B]  px-4 py-6 sm:px-6 lg:px-8">
+                        <nav class="relative flex items-center justify-between sm:h-10 md:bg-[#01001B]"
+                            aria-label="Global">
+                            <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                                <div class="flex w-full items-center justify-between md:w-auto">
+                                    <a href="./index.html">
+                                        <span class="sr-only">Your Company</span>
+                                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full"
+                                            src="./images/logo.png">
+                                    </a>
+                                    <div class="-mr-2 flex items-center md:hidden">
+                                        <button type="button" @click="show = !show"
+                                            :class="{'block': !show, 'hidden':show }"
+                                            class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                                            aria-expanded="false">
+                                            <span class="sr-only">Open main menu</span>
+                                            <!-- Heroicon name: outline/bars-3 -->
+                                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+                                <a href="./about.html" class="font-medium text-white hover:text-indigo-500">About</a>
+
+                                <a href="./mission.html"
+                                    class="font-medium text-white hover:text-indigo-500">Mission</a>
+
+                                <a href="#" class="font-medium text-white hover:text-indigo-500">Gallery</a>
+
+                                <a href="#" class="font-medium text-white hover:text-indigo-500">Magazine</a>
+
+                                <a href="./festivals.html"
+                                    class="font-medium text-white hover:text-indigo-500">Festivals</a>
+                            </div>
+
+
+                            <form action="" class="hidden md:block ">
+                                <input type="image" class="object-cover w-7 h-7 rounded-full" src="./images/user.svg"
+                                    alt="user image">
+                            </form>
+
+                        </nav>
+                    </div>
+
+
+                    <div
+                        :class=" show ? 'absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden': 'hidden' ">
+                        <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+                            <div class="flex items-center justify-between px-5 pt-4">
+                                <div>
+                                    <a href="./index.html">
+                                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full"
+                                            src="./images/logo.png">
+                                    </a>
+                                </div>
+                                <div class="-mr-2">
+                                    <button type="button" @click="show = !show"
+                                        :class="{'hidden': !show, 'block':show }"
+                                        class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <span class="sr-only">Close main menu</span>
+                                        <!-- Heroicon name: outline/x-mark -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div :class=" show ? 'absolute top-22 bg-[white] w-full min-h-full z-10 space-y-3 px-2 pt-2 pb-3' : 'hidden' ">
+            <a href="./about.html"
+                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">About</a>
+
+            <a href="./mission.html"
+                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Mission</a>
+
+            <a href="#"
+                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Gallery</a>
+
+            <a href="#"
+                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Magazine</a>
+
+            <a href="./festivals.html"
+                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Festivals</a>
+        </div>
+
+
+
+
+
+
+        <section class="text-white py-8">
+            <div class="px-4 mx-auto max-w-screen-xl ">
+                <div class="max-w-3xl mx-auto text-center py-6">
+                    <h3 class="text-2xl font-bold text-white">
+                        Our Mission
+                    </h3>
+                </div>
+            </div>
+
+            <div class="min-w-screen-4xl w-full h-auto md:max-h-1/2">
+                <img src="./images/banner.svg" alt="banner"
+                    class="min-w-screen-4xl w-full h-auto md:h-full object-cover">
+            </div>
+
+            <div class=" w-full">
+                <div class="p-4 mx-auto max-w-screen-2xl">
+                    <p class="fonts-fam md:text-2xl tracking-widest leading-loose mt-4">
+                        …for those who yearn for the nostalgic feeling of their past, for those who see value in culture
+                        and it`s preservation…
+                    </p><br>
+                    <p class="md:text-2xl tracking-widest leading-loose">
+                        we are here to preserve ancient cultures, our rich histories, one that does not discriminate, to
+                        shine a light on the diverse histories on earth. <br>
+                        There`s power in our heritage. Power in our community. Power in our culture. Own your heritage!
+                        <br>
+                        Gatekeeper`s NFTs is a collection where the token itself earns annual dividend from TAC’s
+                        history and culture magazine mints. The city is heritage! Gate-keep with us.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="footer h-16 md:h-24 w-full"></div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+</body>
+
+</html>
