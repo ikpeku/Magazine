@@ -1,309 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>About</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter&family=Manrope:wght@700&family=Patrick+Hand&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter&family=Manrope:wght@700&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        html {
-            font-family: "DM Sans";
+      html {
+        font-family: "DM Sans";
+      }
+
+      .font-fam {
+        font-family: "Inter" !important;
+      }
+
+      .fade {
+        animation: myAnim 1s ease 0s 1 normal both;
+      }
+
+      @keyframes myAnim {
+        0% {
+          opacity: 0;
+          transform: rotateX(70deg);
+          transform-origin: top;
         }
 
-        .font-fam {
-            font-family: 'Inter' !important;
+        100% {
+          opacity: 1;
+          transform: rotateX(0deg);
+          transform-origin: top;
         }
+      }
     </style>
     <style type="text/tailwindcss">
+      @layer base {
+        html {
+          font-family: "DM Sans";
+        }
+      }
 
-        @layer base {
-            html {
-                font-family: "DM Sans" ;
-                
-            }
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .box-shadow {
+          box-shadow: 0px 4px 20px 6px rgba(252, 0, 0, 0.16);
+        }
+        .background-main {
+          background: rgb(61, 4, 4);
+          background: linear-gradient(
+            162deg,
+            rgba(61, 4, 4, 1) 0%,
+            rgba(3, 7, 30, 1) 18%,
+            rgba(16, 9, 23, 1) 65%,
+            rgba(60, 14, 2, 0.969625350140056) 71%,
+            rgba(16, 9, 24, 1) 81%,
+            rgba(16, 9, 24, 1) 91%,
+            rgba(3, 7, 30, 1) 100%
+          );
         }
 
-        @layer utilities {
-          .content-auto {
-            content-visibility: auto;
-          }
-          .box-shadow {
-            box-shadow: 0px 4px 20px 6px rgba(252, 0, 0, 0.16);
-          }
-          .background-main {
-            background: rgb(61,4,4);
-            background: linear-gradient(162deg, rgba(61,4,4,1) 0%, rgba(3,7,30,1) 18%, rgba(16,9,23,1) 65%, rgba(60,14,2,0.969625350140056) 71%, rgba(16,9,24,1) 81%, rgba(16,9,24,1) 91%, rgba(3,7,30,1) 100%);
-          }
-
-          .modal {
-            background: rgb(60,14,2);
-             background: linear-gradient(162deg, rgba(60,14,2,0.969625350140056) 9%, rgba(58,14,3,1) 82%);
-          }
-
-          .modal2 {
-            background: rgba(27, 27, 27, 0.62);
-            box-shadow: 3px 3px 4px 5px rgba(252, 0, 0, 0.2);
-            border-radius: 10px;
-          }
-
-          .btn {
-            background: rgba(252, 0, 0, 0.2);
-            border: 3px solid rgba(252, 0, 0, 0.85);
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 40px 40px 40px 0px;
-          }
-
-          .footer {
-            background: #12131C;
-            box-shadow: -3px -3px 9px 3px rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(4px);
-          }
+        .modal {
+          background: rgb(60, 14, 2);
+          background: linear-gradient(
+            162deg,
+            rgba(60, 14, 2, 0.969625350140056) 9%,
+            rgba(58, 14, 3, 1) 82%
+          );
         }
-      </style>
-</head>
 
-<body class="">
+        .modal2 {
+          background: rgba(27, 27, 27, 0.62);
+          box-shadow: 3px 3px 4px 5px rgba(252, 0, 0, 0.2);
+          border-radius: 10px;
+        }
 
+        .btn {
+          background: rgba(252, 0, 0, 0.2);
+          border: 3px solid rgba(252, 0, 0, 0.85);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 40px 40px 40px 0px;
+        }
 
-    <main class="relative background-main bg-no-repeat h-full" x-data="{ show: false }">
+        .footer {
+          background: #12131c;
+          box-shadow: -3px -3px 9px 3px rgba(255, 255, 255, 0.4);
+          backdrop-filter: blur(4px);
+        }
+      }
+    </style>
+  </head>
 
-        <div class="relative overflow-hidden bg-white md:bg-[#01001B] md:box-shadow">
-            <div class="mx-auto max-w-7xl md:bg-[#01001B]">
-
-                <div class="md:bg-[#01001B]">
-                    <div class="relative md:bg-[#01001B]  px-4 py-6 sm:px-6 lg:px-8">
-                        <nav class="relative flex items-center justify-between sm:h-10 md:bg-[#01001B]"
-                            aria-label="Global">
-                            <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
-                                <div class="flex w-full items-center justify-between md:w-auto">
-                                    <a href="./index.html">
-                                        <span class="sr-only">Your Company</span>
-                                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full"
-                                            src="./images/logo.png">
-                                    </a>
-                                    <div class="-mr-2 flex items-center md:hidden">
-                                        <button type="button" @click="show = !show"
-                                            :class="{'block': !show, 'hidden':show }"
-                                            class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                            aria-expanded="false">
-                                            <span class="sr-only">Open main menu</span>
-                                            <!-- Heroicon name: outline/bars-3 -->
-                                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
-                                <a href="./about.html" class="font-medium text-white hover:text-indigo-500">About</a>
-
-                                <a href="./mission.html"
-                                    class="font-medium text-white hover:text-indigo-500">Mission</a>
-
-                                <a href="#" class="font-medium text-white hover:text-indigo-500">Gallery</a>
-
-                                <a href="#" class="font-medium text-white hover:text-indigo-500">Magazine</a>
-
-                                <a href="./festivals.html"
-                                    class="font-medium text-white hover:text-indigo-500">Festivals</a>
-                            </div>
-
-
-                            <form action="" class="hidden md:block ">
-                                <input type="image" class="object-cover w-7 h-7 rounded-full" src="./images/user.svg"
-                                    alt="user image">
-                            </form>
-
-                        </nav>
+  <body class="">
+    <main
+      class="relative background-main bg-no-repeat h-full"
+      x-data="{ show: false }"
+    >
+      <div class="relative w-full overflow-hidden bg-[#01001B] md:box-shadow">
+        <div class="mx-auto max-w-7xl md:bg-[#01001B]">
+          <div class="md:bg-[#01001B]">
+            <div class="relative md:bg-[#01001B] px-4 py-6 sm:px-6 lg:px-8">
+              <nav
+                class="relative flex items-center justify-between sm:h-10 md:bg-[#01001B]"
+                aria-label="Global"
+              >
+                <div
+                  class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0"
+                >
+                  <div
+                    class="flex w-full items-center justify-between md:w-auto"
+                  >
+                    <a href="./index.html">
+                      <span class="sr-only">Your Company</span>
+                      <img
+                        alt="logo"
+                        class="h-8 w-auto sm:h-16 border rounded-full"
+                        src="./images/logo.png"
+                      />
+                    </a>
+                    <div class="-mr-2 flex items-center md:hidden">
+                      <button
+                        type="button"
+                        style="background-color: #01001b"
+                        @click="show = !show"
+                        :class="{'block': !show, 'hidden':show }"
+                        class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        aria-expanded="false"
+                      >
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Heroicon name: outline/bars-3 -->
+                        <svg
+                          class="h-6 w-6"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                          />
+                        </svg>
+                      </button>
                     </div>
-
-                    <div
-                        :class=" show ? 'absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden': 'hidden' ">
-                        <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
-                            <div class="flex items-center justify-between px-5 pt-4">
-                                <div>
-                                    <a href="./index.html">
-                                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full"
-                                            src="./images/logo.png">
-                                    </a>
-                                </div>
-                                <div class="-mr-2">
-                                    <button type="button" @click="show = !show"
-                                        :class="{'hidden': !show, 'block':show }"
-                                        class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                        <span class="sr-only">Close main menu</span>
-                                        <!-- Heroicon name: outline/x-mark -->
-                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
 
+                <div class="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
+                  <a
+                    href="./about.html"
+                    class="font-medium text-white hover:text-indigo-500"
+                    >About</a
+                  >
+
+                  <a
+                    href="./mission.html"
+                    class="font-medium text-white hover:text-indigo-500"
+                    >Mission</a
+                  >
+
+                  <a
+                    href="#"
+                    class="font-medium text-white hover:text-indigo-500"
+                    >Gallery</a
+                  >
+
+                  <a
+                    href="./magazine.html"
+                    class="font-medium text-white hover:text-indigo-500"
+                    >Magazine</a
+                  >
+
+                  <a
+                    href="./festivals.html"
+                    class="font-medium text-white hover:text-indigo-500"
+                    >Festivals</a
+                  >
+                </div>
+
+                <form action="" class="hidden md:block">
+                  <input
+                    type="image"
+                    class="object-cover w-7 h-7 rounded-full"
+                    src="./images/user.svg"
+                    alt="user image"
+                  />
+                </form>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        :class=" show ? 'fade absolute top-0 bg-[#03071E] w-full min-h-full z-10 space-y-1 px-2 ' : 'hidden' "
+      >
+        <div
+          :class=" show ? 'bg-[#03071E] transform transition md:hidden': 'hidden' "
+        >
+          <div
+            class="overflow-hidden py-2 shadow-md ring-1 ring-black ring-opacity-5"
+          >
+            <div class="flex items-center justify-between px-5 pt-4">
+              <div>
+                <em
+                  class="fonts-fam font-bold text-2xl text-white h-8 w-auto sm:h-16"
+                >
+                  Open the Sense of Beauty
+                </em>
+              </div>
+              <div class="-mr-2">
+                <button
+                  style="background-color: #01001b"
+                  type="button"
+                  @click="show = !show"
+                  :class="{'hidden': !show, 'block':show }"
+                  class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                >
+                  <span class="sr-only">Close main menu</span>
+                  <!-- Heroicon name: outline/x-mark -->
+                  <svg
+                    class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div :class=" show ? 'absolute top-22 bg-[white] w-full min-h-full z-10 space-y-3 px-2 pt-2 pb-3' : 'hidden' ">
-            <a href="./about.html"
-                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">About</a>
+        <a
+          href="./index.html"
+          class="block hover:rounded-md mt-8 px-3 py-2 text-base font-medium text-white hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/home.svg" alt="home icon" />
+            <div>
+              <p class="font-bold text-lg">Home</p>
+              <em>Is treasure</em>
+            </div>
+          </div>
+        </a>
 
-            <a href="./mission.html"
-                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Mission</a>
+        <a
+          href="./about.html"
+          class="block rounded-md px-3 py-2 text-base font-medium text-white bg-[#fc000033] hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/about.svg" alt="about icon" />
+            <div>
+              <p class="font-bold text-lg">About</p>
+              <em>A labour of love</em>
+            </div>
+          </div>
+        </a>
 
-            <a href="#"
-                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Gallery</a>
+        <a
+          href="./mission.html"
+          class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/mission.svg" alt="mission icon" />
+            <div>
+              <p class="font-bold text-lg">Mission</p>
+              <em>Own your heritage</em>
+            </div>
+          </div>
+        </a>
 
-            <a href="#"
-                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Magazine</a>
+        <a
+          href="#"
+          class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/gallery.svg" alt="gallery icon" />
+            <div>
+              <p class="font-bold text-lg">Gallery</p>
+              <em>Collections of culture</em>
+            </div>
+          </div>
+        </a>
 
-            <a href="./festivals.html"
-                class="bg-[#12131C] block rounded-md px-3 py-4 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900">Festivals</a>
+        <a
+          href="./magazine.html"
+          class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/magazine.svg" alt="Magazine icon" />
+            <div>
+              <p class="font-bold text-lg">Magazine</p>
+              <em>Sell your stories</em>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="./festivals.html"
+          class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-[#fc000033] hover:text-white"
+        >
+          <div class="flex space-x-4">
+            <img src="./images/festival.svg" alt="festival icon" />
+            <div>
+              <p class="font-bold text-lg">Festivals</p>
+              <em>Culture bound</em>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <section class="text-white py-2 md:py-8">
+        <div class="px-4 mx-auto max-w-screen-xl">
+          <div class="max-w-3xl mx-auto text-center py-6">
+            <h3 class="text-2xl font-bold text-white">About</h3>
+          </div>
         </div>
-
-
-
-
-        <section class="text-white py-8">
-            <div class="px-4 mx-auto max-w-screen-xl ">
-                <div class="max-w-3xl mx-auto text-center py-6">
-                    <h3 class="text-2xl font-bold text-white">
-                        About
-                    </h3>
-                </div>
-            </div>
-
-
-            <section>
-                <div class="px-4 py-9 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2">
-                        <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:h-full lg:order-last">
-                            <img class="absolute inset-0 object-cover w-full h-full" src="./images/eypt1.svg"
-                                alt="eyptian mummy" />
-                        </div>
-
-                        <div class="">
-                            <p class="text-md font-medium sm:text-2xl">
-                                The Ancient city is a brand, a new kind of brand we build together preserving our
-                                heritage. <br>
-                                A brand for the Metaverse. By the community.
-                                A first collection of 5,000 Gatekeepers that will give you membership access to the
-                                Ancient city. Heritage is our gift from the past, what we live with today, and what we
-                                pass on to future generations. <br>
-                                Now, the line between the physical and digital worlds are blurring and the rules are
-                                being rewritten. We must carry our culture, heritage and history to the future. <br>
-                                The Ancient city is a corner of the internet, an archive in the Metaverse where art,
-                                community and culture fuse to create magic. <br>
-                                To enter the city, one must be proven worthy and ready to acquire the higher knowledge
-                                and insights.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </section>
-
-
-        <section class="p-4 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-24 max-w-screen-2xl mx-auto">
-
-            <div class="relative flex ">
-                <div class="absolute -top-6 md:-top-12 left-6">
-                    <a href="./index.html">
-                        <span class="sr-only">Your Company</span>
-                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full" src="./images/sky_lantern.svg">
-                    </a>
-                </div>
-                <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
-                <div class="p-8 border modal2 text-white">
-                    <p class="font-fam md:text-2xl tracking-widest leading-loose">
-                        Access the city`s diverse historical and cultural knowledge in the town square.
-                    </p>
-                </div>
-            </div>
-
-            <div class="relative flex ">
-                <div class="absolute -top-6 md:-top-12 left-6">
-                    <a href="./index.html">
-                        <span class="sr-only">Your Company</span>
-                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full" src="./images/clip_svgrepo.svg">
-                    </a>
-                </div>
-                <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
-                <div class="p-8  border modal2 text-white">
-                    <p class="font-fam md:text-2xl tracking-widest leading-loose">
-                        Join thousands making money doing what they love by telling their unique cultural stories on
-                        TAC`s Magazine.
-                    </p>
-                </div>
-            </div>
-
-            <div class="relative flex ">
-                <div class="absolute -top-6 md:-top-12 left-6">
-                    <a href="./index.html">
-                        <span class="sr-only">Your Company</span>
-                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full" src="./images/share_svgrepo.svg">
-                    </a>
-                </div>
-                <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
-                <div class="p-8  border modal2 text-white">
-                    <p class="font-fam md:text-2xl tracking-widest leading-loose">
-                        Gatekeepers earn 20% dividend from magazine mints annually! How cool is that?!
-                    </p>
-                </div>
-            </div>
-
-            <div class="relative flex">
-                <div class="absolute -top-6 md:-top-12 left-6">
-                    <a href="./index.html">
-                        <span class="sr-only">Your Company</span>
-                        <img alt="logo" class="h-8 w-auto sm:h-16 border rounded-full"
-                            src="./images/glasses_vision.svg">
-                    </a>
-                </div>
-                <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
-                <div class="p-8  border modal2 text-white ">
-                    <p class="font-fam md:text-2xl tracking-widest leading-loose">
-                        Visit monumental places and attend cultural events around the world!
-                    </p>
-                </div>
-            </div>
-
-        </section>
 
         <section>
-            <div class="border w-full modal text-center my-16 py-6 md:py-12">
-                <h3 class=" font-bold text-3xl text-white">Contact Us</h3>
-                <div class="flex space-x-4 justify-center items-center mt-4">
-                    <img src="./images/medium.svg" alt="medium" class="h-6 w-6">
-                    <img src="./images/twitter.svg" alt="twitter" class="h-6 w-6">
-                </div>
+          <div class="px-4 py-9 mx-auto max-w-screen-xl sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2">
+              <div
+                class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:h-full lg:order-last"
+              >
+                <img
+                  class="absolute inset-0 object-cover w-full h-full"
+                  src="./images/about_banner.png"
+                  alt="eyptian mummy"
+                />
+              </div>
+
+              <div class="">
+                <p class="text-md font-medium sm:text-2xl ">
+                  The Ancient city is a brand, a new kind of brand we build
+                  together preserving our heritage. <br />
+                  A brand for the Metaverse. By the community. A first
+                  collection of 5,000 Gatekeepers that will give you membership
+                  access to the Ancient city. Heritage is our gift from the
+                  past, what we live with today, and what we pass on to future
+                  generations. <br />
+                  Now, the line between the physical and digital worlds are
+                  blurring and the rules are being rewritten. We must carry our
+                  culture, heritage and history to the future. <br />
+                  The Ancient city is a corner of the internet, an archive in
+                  the Metaverse where art, community and culture fuse to create
+                  magic. <br />
+                  To enter the city, one must be proven worthy and ready to
+                  acquire the higher knowledge and insights.
+                </p>
+              </div>
             </div>
+          </div>
         </section>
+      </section>
 
+      <section
+        class="py-4 px-4 md:px-12 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-24 max-w-screen-2xl mx-auto"
+      >
+        <div class="relative flex">
+          <div class="absolute -top-6 md:-top-12 left-6">
+            <a href="./index.html">
+              <span class="sr-only">Your Company</span>
+              <img
+                alt="logo"
+                class="h-8 w-auto sm:h-16 border rounded-full"
+                src="./images/sky_lantern.svg"
+              />
+            </a>
+          </div>
+          <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
+          <div class="p-8 modal2 text-white">
+            <p class="font-fam md:text-2xl tracking-widest leading-loose">
+              Access the city`s diverse historical and cultural knowledge in the
+              town square.
+            </p>
+          </div>
+        </div>
 
-        <div class="mt-16 footer h-16 md:h-24 w-full"></div>
+        <div class="relative flex">
+          <div class="absolute -top-6 md:-top-12 left-6">
+            <a href="./index.html">
+              <span class="sr-only">Your Company</span>
+              <img
+                alt="logo"
+                class="h-8 w-auto sm:h-16 border rounded-full"
+                src="./images/clip_svgrepo.svg"
+              />
+            </a>
+          </div>
+          <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
+          <div class="p-8 modal2 text-white">
+            <p class="font-fam md:text-2xl tracking-widest leading-loose">
+              Join thousands making money doing what they love by telling their
+              unique cultural stories on TAC`s Magazine.
+            </p>
+          </div>
+        </div>
 
+        <div class="relative flex">
+          <div class="absolute -top-6 md:-top-12 left-6">
+            <a href="./index.html">
+              <span class="sr-only">Your Company</span>
+              <img
+                alt="logo"
+                class="h-8 w-auto sm:h-16 border rounded-full"
+                src="./images/share_svgrepo.svg"
+              />
+            </a>
+          </div>
+          <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
+          <div class="p-8 modal2 text-white">
+            <p class="font-fam md:text-2xl tracking-widest leading-loose">
+              Gatekeepers earn 20% dividend from magazine mints annually! How
+              cool is that?!
+            </p>
+          </div>
+        </div>
+
+        <div class="relative flex">
+          <div class="absolute -top-6 md:-top-12 left-6">
+            <a href="./index.html">
+              <span class="sr-only">Your Company</span>
+              <img
+                alt="logo"
+                class="h-8 w-auto sm:h-16 border rounded-full"
+                src="./images/glasses_vision.svg"
+              />
+            </a>
+          </div>
+          <div class="h-16 w-8 bg-[#FC0000] mt-10"></div>
+          <div class="p-8 modal2 text-white">
+            <p class="font-fam md:text-2xl tracking-widest leading-loose">
+              Visit monumental places and attend cultural events around the
+              world!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="w-full modal text-center my-16 py-6 md:py-12">
+          <h3 class="font-bold text-3xl text-white">Contact Us</h3>
+          <div class="flex space-x-4 justify-center items-center mt-4">
+            <img src="./images/medium.svg" alt="medium" class="h-6 w-6" />
+            <img src="./images/twitter.svg" alt="twitter" class="h-6 w-6" />
+          </div>
+        </div>
+      </section>
+
+      <div class="mt-16 footer h-16 md:h-24 w-full"></div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
-
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+      defer
+    ></script>
+  </body>
 </html>
